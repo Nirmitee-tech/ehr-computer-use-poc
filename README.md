@@ -1,4 +1,4 @@
-# OpenClerk Desktop
+# EHR Computer Use POC
 
 **A proof of concept for learning desktop computer use with local Ollama vision models.**
 
@@ -12,7 +12,7 @@ Each action requires review. Completion is a separate operator confirmation of v
 
 ## Watch the POC
 
-[Watch or download the recorded demo](https://github.com/Nirmitee-tech/openclerk-desktop/releases/download/v0.1.0-poc/openclerk-poc.mp4). It shows a synthetic native app, a screenshot-driven proposal from a local Ollama model, an operator review, and the resulting native click. The starting appointment is prepared by an operator. The model demonstration is one reset action; it does not show autonomous appointment booking. The video has on-screen captions and no audio.
+[Watch or download the recorded demo](https://github.com/Nirmitee-tech/ehr-computer-use-poc/releases/download/v0.1.0-poc/openclerk-poc.mp4). It shows a synthetic native app, a screenshot-driven proposal from a local Ollama model, an operator review, and the resulting native click. The starting appointment is prepared by an operator. The model demonstration is one reset action; it does not show autonomous appointment booking. The video has on-screen captions and no audio.
 
 ![Operator review console](docs/evidence/operator-console.png)
 
@@ -66,8 +66,8 @@ The product owner has requested all three operating systems and identified athen
 Requirements: macOS 14 or later, Apple command-line tools with Swift, Python 3.9 or later, and [Ollama](https://ollama.com/download) 0.12.7 or later for the example model. Install Apple command-line tools with `xcode-select --install` if Swift is unavailable. Start Ollama before the runner, using its desktop app or `ollama serve` in another terminal. The current build was compiled on macOS 26. Native portability to earlier macOS versions has not been tested.
 
 ```sh
-git clone https://github.com/Nirmitee-tech/openclerk-desktop.git
-cd openclerk-desktop
+git clone https://github.com/Nirmitee-tech/ehr-computer-use-poc.git
+cd ehr-computer-use-poc
 ./scripts/build-native.sh
 ollama pull qwen3-vl:2b
 ./scripts/start.sh
