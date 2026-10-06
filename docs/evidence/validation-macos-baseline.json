@@ -1,0 +1,59 @@
+{
+  "measured_at_utc": "2026-10-06T05:48:25.731077+00:00",
+  "source": "scripts/verify.py",
+  "scope": "Local synthetic desktop and HTTP behavior; no real EHR, patient or payer data",
+  "counting_unit": "unittest test cases; skipped cases excluded from passed count",
+  "platform": "Darwin",
+  "architecture": "arm64",
+  "python": "3.9.6",
+  "suites": [
+    {
+      "name": "unit",
+      "source_modules": [
+        "tests.test_unit",
+        "tests.test_planner_unit",
+        "tests.test_platform_unit",
+        "tests.test_driver_unit"
+      ],
+      "run": 51,
+      "passed": 51,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "http_integration",
+      "source_modules": [
+        "tests.test_integration"
+      ],
+      "run": 11,
+      "passed": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "macos_native",
+      "source_modules": [
+        "tests.test_native_integration"
+      ],
+      "run": 4,
+      "passed": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "live_local_vision",
+      "source_modules": [
+        "tests.test_live_model_integration"
+      ],
+      "run": 1,
+      "passed": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "all_selected_checks_passed": true
+}

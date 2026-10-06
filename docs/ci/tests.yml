@@ -1,0 +1,14 @@
+name: Desktop engine checks
+on: [push, pull_request]
+jobs:
+  core:
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest tests.test_unit tests.test_planner_unit tests.test_platform_unit tests.test_driver_unit tests.test_integration -v

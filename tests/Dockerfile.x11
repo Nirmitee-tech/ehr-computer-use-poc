@@ -1,0 +1,8 @@
+FROM debian:bookworm-slim
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-tk python3-xlib python3-venv xvfb openbox xdotool xauth fonts-dejavu-core && rm -rf /var/lib/apt/lists/*
+RUN python3 -m venv --system-site-packages /opt/testenv && /opt/testenv/bin/pip install --no-cache-dir "mss>=9"
+ENV PATH=/opt/testenv/bin:$PATH
+WORKDIR /work
+COPY . /work
+ENV DISPLAY=:99 XDG_SESSION_TYPE=x11 OPENCLERK_X11_TESTS=1
+CMD ["sh", "scripts/test-x11-container.sh"]

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="session-token" content="__SESSION_TOKEN__"><title>OpenClerk · Desktop operations</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><a class="brand" href="/">◈ <strong>OpenClerk</strong><span>Desktop operations</span></a><div class="local"><i></i> Local execution</div><button id="stop" class="stop">Stop run</button></header>
+<main>
+<section class="heading"><div><p class="eyebrow">COMPUTER USE / OPERATOR WORKSPACE</p><h1>Give your desktop a task.</h1><p class="lead">See what the agent sees. Review its next action. Keep control of the result.</p></div><div id="state" class="state">Idle</div></section>
+<div class="notice">Development build · The default target uses synthetic healthcare data. Each input requires your review.</div>
+<div class="workspace">
+<aside class="setup panel"><div class="panel-title"><span class="number">01</span><h2>Set the task</h2></div>
+<label for="target">Approved application</label><select id="target"><option value="io.openclerk.clinicdemo">OpenClerk Clinic · synthetic native app</option></select><p class="hint">Only apps explicitly allowed when the runner starts appear here.</p>
+<label for="model">Local vision model</label><select id="model"><option value="qwen3-vl:2b">qwen3-vl:2b</option></select><button id="refresh" class="text-button">Refresh apps and models</button>
+<label for="task">What should the agent do?</label><textarea id="task" rows="7">In this synthetic clinic app, book TEST-REF-001 with Test Provider A in Synthetic slot A. Add the note "Test scheduling run". Verify the saved appointment identifier before proposing completion.</textarea>
+<button id="start" class="primary">Start reviewed run <span>→</span></button>
+<div class="readiness"><h3>Desktop session readiness</h3><div id="capture-permission">Screen Recording: checking</div><div id="input-permission">Accessibility: checking</div><p class="hint">If a permission is missing, run <code>python3 -m openclerk.cli permissions</code> and follow your operating system’s access setup.</p></div>
+<p class="hint">Stop prevents further actions. An input already being posted may finish.</p>
+</aside>
+<section class="screen panel"><div class="panel-title"><span class="number">02</span><h2>Observe the application</h2><span id="screen-meta">No capture yet</span></div>
+<div id="screen-frame" class="screen-frame"><div id="empty"><span class="empty-icon">⌘</span><h3>The approved app will appear here.</h3><p>Window screenshots and native mouse and keyboard input.<br>No DOM, browser selectors, or page scripts.</p></div><img id="screenshot" alt="Latest approved application window screenshot" hidden><div id="marker" hidden></div></div>
+<div class="screen-controls"><button id="observe" class="secondary" disabled>Capture window</button><button id="propose" class="primary" disabled>Ask for next action →</button><span id="steps">0 / 30 reviewed steps</span></div>
+<div id="error" role="alert" hidden></div>
+<div class="review"><div class="panel-title"><span class="number">03</span><h2>Review the next action</h2></div><div id="no-proposal" class="hint">The agent proposes one action at a time. Nothing is executed until you approve it.</div><div id="proposal" hidden><div class="action-heading"><span id="action-kind"></span><code id="action-detail"></code></div><p id="reason"></p><p class="expected"><strong>Expected result:</strong> <span id="expected"></span></p><p id="completion-evidence" hidden></p><div class="review-buttons"><button id="approve" class="primary">Approve this action</button><button id="reject" class="secondary">Reject</button></div></div></div>
+</section>
+</div>
+<section class="activity panel"><div class="panel-title"><h2>Run activity</h2><span>Metadata only · Screenshots stay in memory</span></div><ol id="events"><li>No run has started.</li></ol></section>
+</main><footer>OpenClerk 0.1 · Local desktop prototype · No production EHR connection or compliance certification</footer><script src="/app.js"></script></body></html>

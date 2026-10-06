@@ -1,0 +1,48 @@
+{
+  "measured_at_utc": "2026-10-06T05:43:47.636786+00:00",
+  "source": "scripts/verify.py",
+  "scope": "Local synthetic desktop and HTTP behavior; no real EHR, patient or payer data",
+  "counting_unit": "unittest test cases; skipped cases excluded from passed count",
+  "platform": "Linux",
+  "architecture": "aarch64",
+  "python": "3.11.2",
+  "suites": [
+    {
+      "name": "unit",
+      "source_modules": [
+        "tests.test_unit",
+        "tests.test_planner_unit",
+        "tests.test_platform_unit",
+        "tests.test_driver_unit"
+      ],
+      "run": 51,
+      "passed": 51,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "http_integration",
+      "source_modules": [
+        "tests.test_integration"
+      ],
+      "run": 11,
+      "passed": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "linux_x11_native",
+      "source_modules": [
+        "tests.test_linux_native_integration"
+      ],
+      "run": 2,
+      "passed": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "all_selected_checks_passed": true
+}
